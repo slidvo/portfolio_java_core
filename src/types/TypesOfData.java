@@ -15,7 +15,7 @@ public class TypesOfData {
 	private int maxIntValue = Integer.MAX_VALUE;
 	
 	private long minLongValue = Long.MIN_VALUE;
-	private long maxLongValue = Long.MAX_VALUE; 
+	private long maxLongValue = 9_223_372_036_854_775_807L; 
 	
 	private double minDoubleValue = Double.MIN_VALUE;
 	private double maxDoubleValue = Double.MAX_VALUE;
