@@ -1,5 +1,6 @@
 package portfolio_java_core;
 
+import simple_examples.SimpleExamples;
 import types.TypesOfData;
 import work_with_strings.WorkWithStrings;
 
@@ -17,6 +18,8 @@ public class Main {
 		
 		wws.showMe();
 		wws.showStringMethods();
+		
+		new SimpleExamples();
 		
 		
 		System.out.println("Main class finished the exection ");
