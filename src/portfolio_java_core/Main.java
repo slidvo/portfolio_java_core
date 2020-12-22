@@ -1,6 +1,7 @@
 package portfolio_java_core;
 
-import simple_examples.SimpleExamples;
+import examples.ConditionExpressions;
+import examples.TypesConversion;
 import types.TypesOfData;
 import work_with_strings.WorkWithStrings;
 
@@ -19,7 +20,8 @@ public class Main {
 		wws.showMe();
 		wws.showStringMethods();
 		
-		new SimpleExamples();
+		new ConditionExpressions();
+		new TypesConversion();
 		
 		
 		System.out.println("Main class finished the exection ");

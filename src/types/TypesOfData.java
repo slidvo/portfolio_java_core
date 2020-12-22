@@ -60,6 +60,7 @@ public class TypesOfData {
 		private ArraysExmapleClass() {
 			System.out.println("Was created arrays example class");
 			this.show();
+			this.showShortFor();
 		}
 		// array defining
 
@@ -80,6 +81,19 @@ public class TypesOfData {
 					System.out.print(multiDimArr[i][j] + "\t");
 				}
 				System.out.println("\n");
+			}
+		}
+
+		private void showShortFor() {
+			int count = 0;
+			System.out.println("Short entry of cycle for result :");
+			for (int[] i : multiDimArr) {
+				System.out.printf("\t %2$2s line %1$d :",count,"text");
+				for (int j : i) {
+					System.out.print(j + " ");
+				}
+				System.out.println("\n");
+				count += 1;
 			}
 		}
 	}
