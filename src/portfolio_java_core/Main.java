@@ -1,6 +1,7 @@
 package portfolio_java_core;
 
 import examples.ConditionExpressions;
+import examples.HandlingExceptions;
 import examples.Methods;
 import examples.TypesConversion;
 import types.TypesOfData;
@@ -24,6 +25,8 @@ public class Main {
 		new ConditionExpressions();
 		new TypesConversion();
 		new Methods();
+		
+		new HandlingExceptions();
 		
 		
 		System.out.println("Main class finished the exection ");
