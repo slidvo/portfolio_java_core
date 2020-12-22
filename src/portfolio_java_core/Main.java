@@ -1,6 +1,7 @@
 package portfolio_java_core;
 
 import examples.ConditionExpressions;
+import examples.Methods;
 import examples.TypesConversion;
 import types.TypesOfData;
 import work_with_strings.WorkWithStrings;
@@ -22,6 +23,7 @@ public class Main {
 		
 		new ConditionExpressions();
 		new TypesConversion();
+		new Methods();
 		
 		
 		System.out.println("Main class finished the exection ");
