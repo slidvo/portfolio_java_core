@@ -2,11 +2,12 @@ package portfolio_java_core;
 
 import examples.ConditionExpressions;
 import examples.HandlingExceptions;
+import examples.InheritanceExmpl;
 import examples.Methods;
 import examples.StaticElements;
 import examples.TypesConversion;
-import types.TypesOfData;
-import work_with_strings.WorkWithStrings;
+import examples.TypesOfData;
+import examples.WorkWithStrings;
 
 public class Main {
 	
@@ -30,6 +31,8 @@ public class Main {
 		new HandlingExceptions();
 		
 		StaticElements.staticMethod(StaticElements.staticVariable);
+		
+		new InheritanceExmpl("Slava", "SpaceX");
 		
 		
 		System.out.println("Main class finished the exection ");

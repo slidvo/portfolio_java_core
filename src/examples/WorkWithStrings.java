@@ -1,4 +1,4 @@
-package work_with_strings;
+package examples;
 
 import java.text.Collator;
 import java.text.RuleBasedCollator;

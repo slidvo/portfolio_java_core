@@ -1,4 +1,4 @@
-package types;
+package examples;
 
 public class TypesOfData {
 
