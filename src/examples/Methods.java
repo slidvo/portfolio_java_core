@@ -50,7 +50,7 @@ public class Methods {
 	}
 	
 	@SuppressWarnings("unused")
-	private class OverridingMethods extends AbstractClassExmpl{
+	private class OverridingMethods extends abstractMethodExample{
 		private OverridingMethods() {
 			
 		}
@@ -66,8 +66,8 @@ public class Methods {
 		
 	}
 	
-	abstract class AbstractClassExmpl{
-		public abstract void abstactMethod(); 
+	abstract class abstractMethodExample{
+		public abstract void abstactMethod(); // We can to create abstract method only inside an abs 
 	}
 
 }
