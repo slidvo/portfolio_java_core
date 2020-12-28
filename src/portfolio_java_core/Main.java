@@ -5,7 +5,9 @@ import java.io.IOException;
 import examples.CollectionsExample;
 import examples.ConditionExpressions;
 import examples.HandlingExceptions;
+import examples.HashSetExample;
 import examples.InheritanceExmpl;
+import examples.LinkedListExample;
 import examples.Methods;
 import examples.ReadingConfigurationsFromFile;
 import examples.ReadingFiles;
@@ -85,6 +87,12 @@ public class Main {
 		
 		//CollectionsExample
 		new CollectionsExample();
+		
+		//HashSet example
+		new HashSetExample();
+		
+		//LinkedList example
+		new LinkedListExample();
 		
 		System.out.println("Main class finished the exection ");
 	}

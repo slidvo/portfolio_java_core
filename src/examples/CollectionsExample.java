@@ -32,12 +32,12 @@ public class CollectionsExample {
 	void arrayListExample() {
 		ArrayList arrList = new ArrayList<>();
 		System.out.println("arrList : " + arrList);
-		arrList.add(10); // autoboxing 10 into Object
-		arrList.add("Slava"); // autoboxing
-		arrList.add(10.25); // autoboxing
-		arrList.add(true); // autoboxing
-		arrList.add(null); // autoboxing
-		arrList.add('c'); // autoboxing
+		arrList.add(10); // auto boxing 10 into Object
+		arrList.add("Slava"); // auto boxing
+		arrList.add(10.25); // auto boxing
+		arrList.add(true); // auto boxing
+		arrList.add(null); // auto boxing
+		arrList.add('c'); // auto boxing
 		System.out.println(
 				"arrList.add(10) : " + arrList + " size :" + arrList.size() + " arrList.get(0) : " + arrList.get(0));
 		try {
@@ -75,7 +75,7 @@ public class CollectionsExample {
 		 * list.get(0) give Integer value and when we addition 32 (int) to 10 (Integer) 
 		 * then 10 unboxing to int
 		 */
-		System.out.printf("%d + %d = %d  ",list.get(0),32, (32+list.get(0)));
+		System.out.printf("%d + %d = %d  \n",list.get(0),32, (32+list.get(0)));
 	}
 
 }
