@@ -1,6 +1,8 @@
 package portfolio_java_core;
 
 import java.io.IOException;
+
+import examples.CollectionsExample;
 import examples.ConditionExpressions;
 import examples.HandlingExceptions;
 import examples.InheritanceExmpl;
@@ -80,6 +82,9 @@ public class Main {
 		data = "Name,age,gender\nSlava,32,male";
 		csvFile1.write(data);
 		csvFile1.close();
+		
+		//CollectionsExample
+		new CollectionsExample();
 		
 		System.out.println("Main class finished the exection ");
 	}
