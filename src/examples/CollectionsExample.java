@@ -30,7 +30,7 @@ public class CollectionsExample {
 	}
 
 	void arrayListExample() {
-		ArrayList arrList = new ArrayList<>();
+		ArrayList<Object> arrList = new ArrayList<>();
 		System.out.println("arrList : " + arrList);
 		arrList.add(10); // auto boxing 10 into Object
 		arrList.add("Slava"); // auto boxing
@@ -62,7 +62,7 @@ public class CollectionsExample {
 		System.out.println();
 		
 		//get all values with Iterator help
-		Iterator iter = arrList.iterator();
+		Iterator<Object> iter = arrList.iterator();
 		while(iter.hasNext()) {
 			System.out.print(iter.next()+" ");
 		} System.out.println();

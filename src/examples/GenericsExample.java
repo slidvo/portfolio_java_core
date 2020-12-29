@@ -2,7 +2,7 @@ package examples;
 
 class GenericsExample {
 
-	private class example1<T extends String, D> {
+	private class example1<T, D> {
 		private T id;
 		private D arg;
 
@@ -12,6 +12,7 @@ class GenericsExample {
 			this.id = id;
 			this.arg = arg;
 			System.err.printf(id + " : %s \n", id.getClass().getSimpleName());
+			System.out.println(this.id  + " " + this.arg);
 
 		}
 	}
@@ -20,7 +21,7 @@ class GenericsExample {
 		// TODO Auto-generated constructor stub
 		System.out.println("Was created instance of class GenericsExample");
 		System.out.println("arg : " + arg + " type : " + arg.getClass().getSimpleName());
-		// new example1<Integer, String>(42, "number"); Integer is not a valid substitute to String
+
 		new example1<String, Integer>("TheAnswer :", 42);
 	}
 
