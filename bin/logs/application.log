@@ -1,0 +1,30 @@
+2020-12-29 17:57:21,578 TRACE p.Main [main] : TRACE portfolio_java_core.Main Entering application.
+2020-12-29 17:57:21,586 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Enter
+2020-12-29 17:57:21,586 ERROR e.Log4jExample [main] : ERROR examples.Log4jExample Did it again!
+2020-12-29 17:57:21,586 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Exit with(false)
+2020-12-29 17:57:21,587 ERROR p.Main [main] : ERROR portfolio_java_core.Main Did not do it.
+2020-12-29 17:57:21,587 TRACE p.Main [main] : TRACE portfolio_java_core.Main Exiting applicatiopn.
+2020-12-29 17:57:30,942 TRACE p.Main [main] : TRACE portfolio_java_core.Main Entering application.
+2020-12-29 17:57:30,950 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Enter
+2020-12-29 17:57:30,950 ERROR e.Log4jExample [main] : ERROR examples.Log4jExample Did it again!
+2020-12-29 17:57:30,950 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Exit with(false)
+2020-12-29 17:57:30,951 ERROR p.Main [main] : ERROR portfolio_java_core.Main Did not do it.
+2020-12-29 17:57:30,951 TRACE p.Main [main] : TRACE portfolio_java_core.Main Exiting applicatiopn.
+2020-12-29 17:57:33,444 TRACE p.Main [main] : TRACE portfolio_java_core.Main Entering application.
+2020-12-29 17:57:33,453 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Enter
+2020-12-29 17:57:33,453 ERROR e.Log4jExample [main] : ERROR examples.Log4jExample Did it again!
+2020-12-29 17:57:33,453 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Exit with(false)
+2020-12-29 17:57:33,453 ERROR p.Main [main] : ERROR portfolio_java_core.Main Did not do it.
+2020-12-29 17:57:33,453 TRACE p.Main [main] : TRACE portfolio_java_core.Main Exiting applicatiopn.
+2020-12-29 17:57:35,069 TRACE p.Main [main] : TRACE portfolio_java_core.Main Entering application.
+2020-12-29 17:57:35,077 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Enter
+2020-12-29 17:57:35,078 ERROR e.Log4jExample [main] : ERROR examples.Log4jExample Did it again!
+2020-12-29 17:57:35,078 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Exit with(false)
+2020-12-29 17:57:35,078 ERROR p.Main [main] : ERROR portfolio_java_core.Main Did not do it.
+2020-12-29 17:57:35,078 TRACE p.Main [main] : TRACE portfolio_java_core.Main Exiting applicatiopn.
+2020-12-29 17:57:37,204 TRACE p.Main [main] : TRACE portfolio_java_core.Main Entering application.
+2020-12-29 17:57:37,212 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Enter
+2020-12-29 17:57:37,212 ERROR e.Log4jExample [main] : ERROR examples.Log4jExample Did it again!
+2020-12-29 17:57:37,213 TRACE e.Log4jExample [main] : TRACE examples.Log4jExample Exit with(false)
+2020-12-29 17:57:37,213 ERROR p.Main [main] : ERROR portfolio_java_core.Main Did not do it.
+2020-12-29 17:57:37,213 TRACE p.Main [main] : TRACE portfolio_java_core.Main Exiting applicatiopn.

@@ -2,12 +2,16 @@ package portfolio_java_core;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import examples.CollectionsExample;
 import examples.ConditionExpressions;
 import examples.HandlingExceptions;
 import examples.HashSetExample;
 import examples.InheritanceExmpl;
 import examples.LinkedListExample;
+import examples.Log4jExample;
 import examples.Methods;
 import examples.ReadingConfigurationsFromFile;
 import examples.ReadingFiles;
@@ -18,6 +22,8 @@ import examples.WorkWithStrings;
 import examples.WrittingFiles;
 
 public class Main {
+	
+	private static final Logger logger = LogManager.getLogger(Main.class);
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Main class was started");
@@ -93,6 +99,36 @@ public class Main {
 		
 		//LinkedList example
 		new LinkedListExample();
+		
+		//Log4j
+		logger.trace("Entering application.");
+		
+		Log4jExample l4 = new Log4jExample();
+		
+		if(!l4.doIt()) {
+			logger.error("Did not do it.");
+		}
+		logger.trace("Exiting applicatiopn.");
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		System.out.println("Main class finished the exection ");
 	}
