@@ -109,24 +109,7 @@ public class Main {
 			logger.error("Did not do it.");
 		}
 		logger.trace("Exiting applicatiopn.");
-			
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+				
 		
 		
 		

@@ -8,22 +8,32 @@
 			<PatternLayout pattern="%d %p %c{1.} [%t] : %-5level %logger{36} %m%n"/>
 			
 		</File>
+<SMTP name="MAIL" subject="Error Log" to="mailTo" from="mailFrom"
+          smtpHost="smtp.yandex.ru" smtpPort="465"  smtpUsername="login" smtpPassword="password" smtpProtocol="smtps">
+    </SMTP>
+		
 	</Appenders>
 	<Loggers>
 		
 		<Logger name="portfolio_java_core.Main" level="trace" additivity="false">
-		<AppenderRef ref="Console"/>
+					<AppenderRef ref="Console"/>
 					<AppenderRef ref="application"/>
+					<AppenderRef ref="MAIL"/>
+					
 		</Logger>
 		
 		<Logger name="examples.Log4jExample" level="trace" additivity="false">
-			<AppenderRef ref="Console"/>			
+						<AppenderRef ref="Console"/>			
 						<AppenderRef ref="application"/>
+						<AppenderRef ref="MAIL"/>
+						
 		</Logger>
 
 		<Root level="error">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="application"/>
+			<AppenderRef ref="MAIL"/>
+	
 		</Root>
 	</Loggers>
 </Configuration>
