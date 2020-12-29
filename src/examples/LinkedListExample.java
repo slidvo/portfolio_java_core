@@ -10,7 +10,6 @@ public class LinkedListExample {
 		cities.add("Saint-Peterspurg");
 		cities.add("Irkutsk");
 		cities.add("Chelyabinsk");
-		cities.add("Chelyabinsk");
 		cities.remove(cities.size() - 1);
 
 		cities.addLast("Perim");
