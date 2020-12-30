@@ -4,13 +4,30 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} ::: [%t] %-5level %logger{36} - %msg%n"/>
 		</Console>
-		<File name="application" fileName="src/logs/application.log" append="true">
+		<File name="application" fileName="src/logs/application.log" append="false">
 			<PatternLayout pattern="%d %p %c{1.} [%t] : %-5level %logger{36} %m%n"/>
 			
 		</File>
-<SMTP name="MAIL" subject="Error Log" to="mailTo" from="mailFrom"
-          smtpHost="smtp.yandex.ru" smtpPort="465"  smtpUsername="login" smtpPassword="password" smtpProtocol="smtps">
-    </SMTP>
+		<!--
+		<SMTP name="MAIL" subject="Error Log" to="mailTo" from="mailFrom"
+          smtpHost="smtp.yandex.ru" smtpPort="465"
+          smtpUsername="login"
+          smtpPassword="password"
+          smtpProtocol="smtps">
+        </SMTP> 
+		 -->
+        <RollingFile name="htmlLogger" 
+        fileName="src/logs/errors.html" 
+        filePattern="src/logs/errors-%d{yyyy-MM-dd}.html"
+        append="false">
+        
+			 <HTMLLayout charset="UTF-8" title="sHowtodoinjava Info Logs" locationInfo="true" datePattern="%d{DEFAULT}"/>
+			 
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+		</RollingFile>
+        
 		
 	</Appenders>
 	<Loggers>
@@ -18,21 +35,21 @@
 		<Logger name="portfolio_java_core.Main" level="trace" additivity="false">
 					<AppenderRef ref="Console"/>
 					<AppenderRef ref="application"/>
-					<AppenderRef ref="MAIL"/>
+					<AppenderRef ref="htmlLogger"/>
 					
 		</Logger>
 		
 		<Logger name="examples.Log4jExample" level="trace" additivity="false">
 						<AppenderRef ref="Console"/>			
 						<AppenderRef ref="application"/>
-						<AppenderRef ref="MAIL"/>
+						<AppenderRef ref="htmlLogger"/>
 						
 		</Logger>
 
 		<Root level="error">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="application"/>
-			<AppenderRef ref="MAIL"/>
+			<AppenderRef ref="htmlLogger"/>
 	
 		</Root>
 	</Loggers>
