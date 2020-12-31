@@ -73,12 +73,11 @@ public class Main {
 				.concat("<head>")
 				.concat("<meta charset=\"utf-8\">")
 				.concat("<title>htmlFile</title>")
-				.concat("<head>")
 				.concat("</head>")
 				.concat("<body>")
 				.concat("<h1>Заголовок 1</h1>")
 				.concat("<p>Текст параграфа</p>")
-				.concat("</body")
+				.concat("</body>")
 				.concat("</html>");
 		
 		WrittingFiles htmlFile1 = new WrittingFiles("htmlFile1.html");
