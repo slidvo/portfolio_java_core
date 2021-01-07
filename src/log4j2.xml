@@ -21,7 +21,7 @@
         filePattern="src/logs/errors-%d{yyyy-MM-dd}.html"
         append="false">
         
-			 <HTMLLayout charset="UTF-8" title="sHowtodoinjava Info Logs" locationInfo="true" datePattern="%d{DEFAULT}"/>
+			 <HTMLLayout charset="UTF-8" title="sHowtodoinjava Info Logs" locationInfo="true" datePattern="DATE"/>
 			 
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true" />
