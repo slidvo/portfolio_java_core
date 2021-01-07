@@ -15,6 +15,10 @@ import examples.Log4jExample;
 import examples.Methods;
 import examples.ReadingConfigurationsFromFile;
 import examples.ReadingFiles;
+import examples.SeleniumChromeDriver;
+import examples.SeleniumEdgeDriver;
+import examples.SeleniumFireFoxDriver;
+import examples.SeleniumIEDriver;
 import examples.StaticElements;
 import examples.TypesConversion;
 import examples.TypesOfData;
@@ -30,6 +34,13 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Main class was started");
+		
+		
+		new SeleniumChromeDriver();
+//		new SeleniumFireFoxDriver()
+//		new SeleniumIEDriver();
+//		new SeleniumEdgeDriver();
+		
 
 		// show initialized variables inside class
 		tod.showVariables();

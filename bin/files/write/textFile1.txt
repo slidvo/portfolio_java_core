@@ -1,1 +1,0 @@
-String : data for writting textFile1.txt
