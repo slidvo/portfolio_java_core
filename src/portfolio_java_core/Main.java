@@ -60,7 +60,7 @@ public class Main {
 		read2.show();
 		read2.close();
 		
-		//Writting files
+		//Writing files
 		WrittingFiles textFile1 = new WrittingFiles("textFile1.txt");
 		
 		String data = "String : data for writting textFile1.txt";
