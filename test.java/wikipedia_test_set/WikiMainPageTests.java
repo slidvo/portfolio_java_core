@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -29,11 +29,13 @@ public class WikiMainPageTests {
 	@Order(1)
 	public void checkLanguages() {
 		d = new ChromeDriver();
+
 		try {
 
 			d.get(url);
-			Select s = new Select(d.findElement(By.xpath("//select[@id='searchLanguage']")));
-
+//			Select s = new Select(d.findElement(By.xpath("//select[@id='searchLanguage']")));
+			Select s = new Select(new WebDriverWait(d, 5)
+					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='searchLanguage']"))));
 			List<WebElement> options = s.getOptions();
 
 			assertEquals(70, options.size());
@@ -46,7 +48,7 @@ public class WikiMainPageTests {
 			d.findElement(By.xpath("//button[@type='submit']")).click();
 			assertEquals("Результаты поиска", d.findElement(By.xpath("//h1[@id='firstHeading']")).getText());
 
-		} catch (Error e) {
+		} catch (Error | Exception e) {
 			throw new Error(e.getMessage());
 		} finally {
 			d.quit();
