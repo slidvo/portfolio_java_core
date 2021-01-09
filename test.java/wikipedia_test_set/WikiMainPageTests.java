@@ -32,7 +32,6 @@ public class WikiMainPageTests {
 		try {
 
 			d.get(url);
-			Thread.sleep(3000);
 			Select s = new Select(d.findElement(By.xpath("//select[@id='searchLanguage']")));
 
 			List<WebElement> options = s.getOptions();
@@ -47,7 +46,7 @@ public class WikiMainPageTests {
 			d.findElement(By.xpath("//button[@type='submit']")).click();
 			assertEquals("Результаты поиска", d.findElement(By.xpath("//h1[@id='firstHeading']")).getText());
 
-		} catch (Error | InterruptedException e) {
+		} catch (Error e) {
 			throw new Error(e.getMessage());
 		} finally {
 			d.quit();
