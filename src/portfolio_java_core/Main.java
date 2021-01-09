@@ -24,6 +24,7 @@ import examples.TypesConversion;
 import examples.TypesOfData;
 import examples.WorkWithStrings;
 import examples.WrittingFiles;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
 
@@ -34,7 +35,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Main class was started");
-		
+
 		
 		new SeleniumChromeDriver();
 //		new SeleniumFireFoxDriver()
