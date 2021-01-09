@@ -71,7 +71,6 @@ public class GmailRegistrationFormTestSet {
 	@Order(3)
 	public void checkInput() {
 		d = new ChromeDriver();
-
 		try {
 			d.get(url);
 			WebElement el = d.findElement(By.xpath("//input[@id='identifierId']"));
