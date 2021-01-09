@@ -39,6 +39,11 @@ public class WikiMainPageTests {
 			List<WebElement> options = s.getOptions();
 
 			assertEquals(70, options.size());
+			
+			for(WebElement elt : options) {
+				System.out.print(elt.getText()+" ");
+			}
+			
 			assertEquals("English", s.getFirstSelectedOption().getText());
 
 			s.selectByValue("ru");
