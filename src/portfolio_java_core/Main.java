@@ -13,35 +13,32 @@ import examples.InheritanceExmpl;
 import examples.LinkedListExample;
 import examples.Log4jExample;
 import examples.Methods;
+import examples.MySqlConnectionExample;
 import examples.ReadingConfigurationsFromFile;
 import examples.ReadingFiles;
 import examples.SeleniumChromeDriver;
-import examples.SeleniumEdgeDriver;
-import examples.SeleniumFireFoxDriver;
-import examples.SeleniumIEDriver;
 import examples.StaticElements;
 import examples.TypesConversion;
 import examples.TypesOfData;
 import examples.WorkWithStrings;
 import examples.WrittingFiles;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
 
 	private static final Logger logger = LogManager.getLogger(Main.class);
-	// Creating instance of TypeOfData
+//	 Creating instance of TypeOfData
 	private static TypesOfData tod = new TypesOfData();
 	private static WorkWithStrings wws = new WorkWithStrings();
 
 	public static void main(String[] args) throws IOException {
 		System.out.println("Main class was started");
 
-		
-		new SeleniumChromeDriver();
+		new MySqlConnectionExample();
+
+//		new SeleniumChromeDriver();
 //		new SeleniumFireFoxDriver()
 //		new SeleniumIEDriver();
 //		new SeleniumEdgeDriver();
-		
 
 		// show initialized variables inside class
 		tod.showVariables();
@@ -55,15 +52,13 @@ public class Main {
 
 		new HandlingExceptions();
 
-		
-		//We can execute static method without creating instance of class
-		StaticElements.staticMethod(StaticElements.staticVariable); 
+		// We can execute static method without creating instance of class
+		StaticElements.staticMethod(StaticElements.staticVariable);
 
 		new InheritanceExmpl("Slava", "SpaceX");
-		
-		//Examples of work with different extensions files (reading writing)
+
+		// Examples of work with different extensions files (reading writing)
 		workWithFiles();
-		
 
 		// CollectionsExample
 		new CollectionsExample();

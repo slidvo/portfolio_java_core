@@ -1,4 +1,4 @@
-package wikipedia_test_set;
+package test.java.wikipedia_test_set;
 
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
@@ -47,11 +47,11 @@ public class WikiMainPageTests {
 			assertEquals("English", s.getFirstSelectedOption().getText());
 
 			s.selectByValue("ru");
-			assertEquals("Русский", s.getFirstSelectedOption().getText());
+			assertEquals("Ð ÑƒÑ�Ñ�ÐºÐ¸Ð¹", s.getFirstSelectedOption().getText());
 
 			d.findElement(By.xpath("//input[@id='searchInput']")).sendKeys("Selenium webdriver");
 			d.findElement(By.xpath("//button[@type='submit']")).click();
-			assertEquals("Результаты поиска", d.findElement(By.xpath("//h1[@id='firstHeading']")).getText());
+			assertEquals("Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñ‹ Ð¿Ð¾Ð¸Ñ�ÐºÐ°", d.findElement(By.xpath("//h1[@id='firstHeading']")).getText());
 
 		} catch (Error | Exception e) {
 			throw new Error(e.getMessage());
