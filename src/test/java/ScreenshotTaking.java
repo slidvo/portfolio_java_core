@@ -1,39 +1,35 @@
 package test.java;
 
+import static org.junit.Assert.assertFalse;
+
 import java.io.File;
-import org.apache.commons.io.FileUtils;
+
+import javax.imageio.ImageIO;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Order;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.comparison.ImageDiff;
+import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
 public class ScreenshotTaking {
-	private static final String url = "https://accounts.google.com/";
-	private static ChromeDriver d;
-	{
-		WebDriverManager.chromedriver().setup();
-	}
-
 	@Test
 	@Order(1)
-	public void makeRegFormScreenshot() {
-		d = new ChromeDriver();
+	public void compareScreenshots() {
+
 		try {
-			d.get(url);
-			d.manage().window().maximize();
 
-			File screenShot_1 = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
+			ImageDiffer imgDiffer = new ImageDiffer();
 
-			FileUtils.copyFile(screenShot_1,
-					new File(System.getProperty("user.dir") + "\\src\\test\\resources\\screenShot_1.jpg"));
+			ImageDiff imgDiff = imgDiffer.makeDiff(
+					ImageIO.read(
+							new File(System.getProperty("user.dir") + "\\src\\test\\resources\\tmp\\screenShot_2.jpg")),
+					ImageIO.read(
+							new File(System.getProperty("user.dir") + "\\src\\test\\resources\\screenShot_1.jpg")));
+
+			assertFalse(imgDiff.hasDiff());
 
 		} catch (Exception e) {
-			throw new Error(e.getMessage());
-		} finally {
-			d.quit();
+		e.printStackTrace();
 		}
 	}
 }
