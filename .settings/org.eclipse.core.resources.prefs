@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/examples/CollectionsExample.java=UTF-8
 encoding//src/portfolio_java_core/Main.java=UTF-8
-encoding//src/test/java/gmail_form_test_set/GmailRegistrationFormTestSet.java=UTF-8
-encoding//src/test/java/wikipedia_test_set/WikiMainPageTests.java=UTF-8
+encoding//src/test/java/GmailRegistrationFormTestSet.java=UTF-8
+encoding//src/test/java/WikiMainPageTests.java=UTF-8

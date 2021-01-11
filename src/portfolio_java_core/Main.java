@@ -16,7 +16,6 @@ import examples.Methods;
 import examples.MySqlConnectionExample;
 import examples.ReadingConfigurationsFromFile;
 import examples.ReadingFiles;
-import examples.SeleniumChromeDriver;
 import examples.StaticElements;
 import examples.TypesConversion;
 import examples.TypesOfData;

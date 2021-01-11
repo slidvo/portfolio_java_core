@@ -1,4 +1,4 @@
-package test.java.gmail_form_test_set;
+package test.java;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -46,12 +46,12 @@ public class GmailRegistrationFormTestSet {
 		try {
 			d.get(url);
 			WebElement el = d.findElement(By.xpath("//h1[@id='headingText']/span"));
-			assertEquals("Ð’Ñ…Ð¾Ð´", el.getText());
+			assertEquals("Вход", el.getText());
 			System.out.println("\tstep 1 successfully");
 
 //			Thread.sleep(2000);
 			WebElement hsub = d.findElement(By.xpath("//div[@id=\"headingSubtext\"]/span"));
-			assertEquals("Ð˜Ñ�Ð¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ Ð°ÐºÐºÐ°ÑƒÐ½Ñ‚ Google", hsub.getText());
+			assertEquals("Используйте аккаунт Google", hsub.getText());
 			System.out.println("\tstep 2 successfully");
 
 //			assert d.findElement(By.xpath("//input[@id='identifierId']")).isDisplayed();
@@ -74,7 +74,7 @@ public class GmailRegistrationFormTestSet {
 		try {
 			d.get(url);
 			WebElement el = d.findElement(By.xpath("//input[@id='identifierId']"));
-			assertEquals("Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½ Ð¸Ð»Ð¸ Ð°Ð´Ñ€ÐµÑ� Ñ�Ð». Ð¿Ð¾Ñ‡Ñ‚Ñ‹", el.getAttribute("aria-label"));
+			assertEquals("Телефон или адрес эл. почты", el.getAttribute("aria-label"));
 
 		} catch (Error e) {
 			throw new Error(e.getMessage());
