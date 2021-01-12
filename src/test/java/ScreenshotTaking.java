@@ -59,8 +59,9 @@ public class ScreenshotTaking {
 			d.get(accountsGoogle);
 			File picAccountsGoole = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(picAccountsGoole, new File(baseDir + "\\accountsGoogle.jpg"));
-		} catch (Error | IOException e) {
-			throw new Error(e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new Error("Не удалось созранить скриншот");
 		} finally {
 			d.quit();
 		}

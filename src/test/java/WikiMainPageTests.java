@@ -33,17 +33,16 @@ public class WikiMainPageTests {
 		try {
 
 			d.get(url);
-//			Select s = new Select(d.findElement(By.xpath("//select[@id='searchLanguage']")));
 			Select s = new Select(new WebDriverWait(d, 5)
 					.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='searchLanguage']"))));
 			List<WebElement> options = s.getOptions();
 
 			assertEquals(70, options.size());
-			
-			for(WebElement elt : options) {
-				System.out.print(elt.getText()+" ");
+
+			for (WebElement elt : options) {
+				System.out.print(elt.getText() + " ");
 			}
-			
+
 			assertEquals("English", s.getFirstSelectedOption().getText());
 
 			s.selectByValue("ru");
@@ -53,8 +52,10 @@ public class WikiMainPageTests {
 			d.findElement(By.xpath("//button[@type='submit']")).click();
 			assertEquals("Результаты поиска", d.findElement(By.xpath("//h1[@id='firstHeading']")).getText());
 
-		} catch (Error | Exception e) {
-			throw new Error(e.getMessage());
+		} catch (AssertionError e) {
+			throw new AssertionError(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			d.quit();
 		}

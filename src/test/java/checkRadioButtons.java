@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class checkRadioButtons {
-	private static final String url = System.getProperty("user.dir") + "\\src\\test\\recources\\page.html";
+	private static final String url = System.getProperty("user.dir") + "\\src\\test\\resources\\page.html";
 	WebDriver d;
 	{
 		WebDriverManager.chromedriver().setup();
@@ -36,8 +36,8 @@ public class checkRadioButtons {
 			assertTrue(elt.isSelected());
 			assertEquals("email", elt.getAttribute("value"));
 
-		} catch (Error e) {
-			throw new Error(e.getMessage());
+		} catch (AssertionError e) {
+			throw new AssertionError(e.getMessage());
 		} finally {
 			d.quit();
 		}

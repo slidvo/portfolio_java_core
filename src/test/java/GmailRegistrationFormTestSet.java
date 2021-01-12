@@ -31,8 +31,8 @@ public class GmailRegistrationFormTestSet {
 			List<WebElement> el = d.findElements(By.xpath("//div[@id=\"logo\"]/div/*[name()=\"svg\"]/*[name()=\"g\"]"));
 			System.out.println("elements size :" + el.size());
 			assertEquals(6, el.size());
-		} catch (Exception e) {
-			throw new Error(e.getMessage());
+		} catch (AssertionError e) {
+			throw new AssertionError(e.getMessage());
 		} finally {
 			d.quit();
 		}
@@ -49,19 +49,12 @@ public class GmailRegistrationFormTestSet {
 			assertEquals("Вход", el.getText());
 			System.out.println("\tstep 1 successfully");
 
-//			Thread.sleep(2000);
 			WebElement hsub = d.findElement(By.xpath("//div[@id=\"headingSubtext\"]/span"));
 			assertEquals("Используйте аккаунт Google", hsub.getText());
 			System.out.println("\tstep 2 successfully");
 
-//			assert d.findElement(By.xpath("//input[@id='identifierId']")).isDisplayed();
-//			assert d.findElement(By.xpath("//input[@id='identifierId']")).isEnabled();
-
-		} catch (Error e) {
-			throw new Error(e.getMessage());
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+		} catch (AssertionError e) {
+			throw new AssertionError(e.getMessage());
 		} finally {
 			d.quit();
 		}
@@ -76,8 +69,8 @@ public class GmailRegistrationFormTestSet {
 			WebElement el = d.findElement(By.xpath("//input[@id='identifierId']"));
 			assertEquals("Телефон или адрес эл. почты", el.getAttribute("aria-label"));
 
-		} catch (Error e) {
-			throw new Error(e.getMessage());
+		} catch (AssertionError e) {
+			throw new AssertionError(e.getMessage());
 		} finally {
 			d.quit();
 		}
