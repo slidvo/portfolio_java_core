@@ -1,8 +1,40 @@
 <!doctype html>
 <html>
 <head>
+  <title>Test page</title>
+  <style>
+     div.wrp{
+       position: relative;
+       font-size: 50px;
+       width: 200px;
+       margin: 0 auto;
+       color: white;
+       font-weight: bold;
+
+     }
+     div.wrp001{
+      position: relative;
+       height: 200px;
+       width: 200px;
+       background-color: red;
+       border-radius: 100px;
+     }
+     div.wrp001>span{
+      position: absolute;
+      top: 70px;
+      left: 50px;
+     }
+     div.wrp001:hover{
+       box-shadow:0 0 10px purple;
+     }
+  </style>
 </head>
 <body>
+<div class="wrp">
+ <div class="wrp001">
+   <span>BRB</span>
+ </div>
+</div>
 	<p><input type=radio  id="contactChoice1"
      name="contact" value="email">String 1</p>
 	<p><input type=radio>String 2</p>
@@ -28,4 +60,10 @@
   </div>
 </form>
 </body>
+<script>
+  let node = document.querySelector("div.wrp")
+  node.onclick = function(){
+    alert("Message of alert! ");
+  }
+</script>
 </html>
