@@ -9,13 +9,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class JavaScriptAlertsHandling {
 	private static final String baseDir = System.getProperty("user.dir")+"\\src\\test\\resources";
 	private static WebDriver d;
-	{
+
+	@BeforeAll
+	static void setup() {
 		WebDriverManager.chromedriver().setup();
 	}
 	
@@ -31,10 +34,12 @@ public class JavaScriptAlertsHandling {
 			System.out.println(a.getText());
 			a.accept();
 			Thread.sleep(1000);
-		} finally {
+			
+		} catch(Error e) {
+			e.printStackTrace();
+			throw new Error(e.getMessage());			
+		}finally {
 			d.quit();
 		}
-	}
-	
-	
+	}	
 }
