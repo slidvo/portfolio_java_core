@@ -23,9 +23,8 @@ public class EventListenerAndActions extends InitTests {
 		System.out.println("Test set : HandlingDragAndDropSlidersResizable had successfully lanched");
 	}
 
-	@Test
-	@Order(1)
-//	@Ignore
+//	@Test
+//	@Order(1)
 	void eventFiringWebDriver() {
 		d = new ChromeDriver();
 
@@ -55,8 +54,8 @@ public class EventListenerAndActions extends InitTests {
 		}
 	}
 
-	@Test
-	@Order(2)
+//	@Test
+//	@Order(2)
 	void mouseMoving() {
 		d = new ChromeDriver();
 
@@ -89,12 +88,50 @@ public class EventListenerAndActions extends InitTests {
 			actions.moveToElement(gmaps).build().perform();
 
 			actions.click(gmaps).build().perform();
-//			
+
 			Thread.sleep(2000);
+		} catch (Error e) {
+			e.printStackTrace();
+			throw new Error(e.getMessage());
 		} catch (Throwable e) {
 			e.printStackTrace();
 		} finally {
 			driver.quit();
+		}
+
+	}
+
+	@Test
+	@Order(3)
+	void handlingJqueryElements() {
+		d = new ChromeDriver();
+
+		try {
+			d.get(basedir + "\\jquery.html");
+			Actions a = new Actions(d);
+
+			WebElement draggable = d.findElement(By.id("draggable"));
+			WebElement droppable = d.findElement(By.id("droppable"));
+
+			a.dragAndDrop(draggable, droppable).build().perform();
+			;
+			Thread.sleep(2000);
+
+			for(int i=0; i<3;i++) {
+				
+				a.dragAndDropBy(draggable, -50, 0).build().perform();
+				
+			}
+
+			Thread.sleep(2000);
+
+		} catch (Error e) {
+			e.printStackTrace();
+			throw new Error(e.getMessage());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		} finally {
+			d.quit();
 		}
 
 	}
