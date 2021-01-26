@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import java.util.concurrent.TimeUnit;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
@@ -59,6 +62,8 @@ public class EventListenerAndActions extends InitTests {
 	void mouseMoving() {
 		d = new ChromeDriver();
 
+		d.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+
 		EventFiringWebDriver driver = new EventFiringWebDriver(d);
 
 		CustomWebListener listener = new CustomWebListener();
@@ -78,7 +83,6 @@ public class EventListenerAndActions extends InitTests {
 
 			actions.click(elt).build().perform();
 
-			Thread.sleep(2000);
 			// switch driver to another frame
 			driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"gbw\"]/div/div/div[3]/iframe")));
 
@@ -89,12 +93,9 @@ public class EventListenerAndActions extends InitTests {
 
 			actions.click(gmaps).build().perform();
 
-			Thread.sleep(2000);
 		} catch (Error e) {
 			e.printStackTrace();
 			throw new Error(e.getMessage());
-		} catch (Throwable e) {
-			e.printStackTrace();
 		} finally {
 			driver.quit();
 		}
@@ -108,28 +109,23 @@ public class EventListenerAndActions extends InitTests {
 
 		try {
 			d.get(basedir + "\\jquery.html");
+
 			Actions a = new Actions(d);
 
 			WebElement draggable = d.findElement(By.id("draggable"));
 			WebElement droppable = d.findElement(By.id("droppable"));
 
 			a.dragAndDrop(draggable, droppable).build().perform();
-			;
-			Thread.sleep(2000);
 
-			for(int i=0; i<3;i++) {
-				
+			for (int i = 0; i < 3; i++) {
+
 				a.dragAndDropBy(draggable, -50, 0).build().perform();
-				
-			}
 
-			Thread.sleep(2000);
+			}
 
 		} catch (Error e) {
 			e.printStackTrace();
 			throw new Error(e.getMessage());
-		} catch (Throwable e) {
-			e.printStackTrace();
 		} finally {
 			d.quit();
 		}
