@@ -1,15 +1,8 @@
 package test.java;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.ReadableByteChannel;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -17,6 +10,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -26,11 +20,46 @@ import test.java.init.InitTests;
 public class MosRu extends InitTests {
 
 	String login = "sidoroff.olex1y@yandex.ru";
-
+	String password = "Qazsxdr22";
 	String testpdfUrl = "http://orimi.com/pdf-test.pdf";
 
 	@Test
 	@Order(1)
+	public void mosRuauth() throws IOException {
+
+		d = new ChromeDriver();
+
+		d.manage().timeouts().implicitlyWait(10L, TimeUnit.SECONDS);
+
+		try {
+
+			d.get("https://my.mos.ru/login");
+
+			WebElement buttonEnter = d.findElement(By.xpath("//*[@id=\"button\"]"));
+
+			buttonEnter.click();
+
+			d.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(login);
+
+			d.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
+
+			d.findElement(By.xpath("//*[@id=\"bind\"]")).click();
+
+		} catch (Error e) {
+			throw new Error(e.getMessage());
+		} finally {
+			d.quit();
+		}
+
+	}
+
+	@Test
+	@Order(2)
+	/**
+	 * Пользователь должен быть авторизирован
+	 * 
+	 */
+
 	public void mosRuAttachFile() throws IOException, Exception {
 
 		ChromeOptions opt = new ChromeOptions();
@@ -46,28 +75,14 @@ public class MosRu extends InitTests {
 
 			downloadUsingNIO(testpdfUrl, testpdfFile);
 
-			d.get("https://my.mos.ru/login");
-
-//			WebElement buttonEnter = d.findElement(By.xpath("//*[@id=\"button\"]"));
-
-//			buttonEnter.click();
-
-			// *[@id="login"]
-//			d.findElement(By.xpath("//*[@id=\"login\"]")).sendKeys(login);
-//			d.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys(password);
-//			
-//			d.findElement(By.xpath("//*[@id=\"bind\"]")).click();
-//
-
 			// Переход на страницу заполнения формы
 			d.navigate().to("https://www.mos.ru/pgu/ru/application/dtis/020301/?load_app=1&draft_id=151263564");
 
-			//Нажать кнопку прикрепить файл
+			// Нажать кнопку прикрепить файл
 			d.findElement(By.xpath("//*[@id=\"transportFacility\"]/fieldset/fieldset[2]/div[10]/div[1]/div[1]/a"))
 					.click();
 
-			
-			//Нажать esc
+			// Нажать esc
 			Thread.sleep(2000L);
 			new Robot().keyPress(KeyEvent.VK_ESCAPE);
 			new Robot().keyRelease(KeyEvent.VK_ESCAPE);
@@ -76,8 +91,8 @@ public class MosRu extends InitTests {
 			e.printStackTrace();
 			throw new Error(e.getMessage());
 		} finally {
-			
-			//указать какой файл будет загружен
+
+			// указать какой файл будет загружен
 			d.findElement(By.xpath("//div[@class=\"btn-add\"]/input[@type=\"file\"]"))
 					.sendKeys(basedir + "\\test-pdf.pdf");
 
@@ -94,16 +109,6 @@ public class MosRu extends InitTests {
 			d.quit();
 		}
 
-	}
-
-	// качаем файл с помощью NIO
-	private static void downloadUsingNIO(String urlStr, String file) throws IOException {
-		URL url = new URL(urlStr);
-		ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-		FileOutputStream fos = new FileOutputStream(file);
-		fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-		fos.close();
-		rbc.close();
 	}
 
 }
